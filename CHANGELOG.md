@@ -17,6 +17,7 @@
 - [#5239](https://github.com/blockscout/blockscout/pull/5239) - Add accounting for block rewards in `getblockreward` api method
 
 ### Chore
+- [#5322](https://github.com/blockscout/blockscout/pull/5322) - DB denormalization: block consensus and timestamp in transaction table
 - [#5318](https://github.com/blockscout/blockscout/pull/5318) - Eliminate Jquery import from chart-loader.js
 - [#5317](https://github.com/blockscout/blockscout/pull/5317) - NPM audit
 - [#5303](https://github.com/blockscout/blockscout/pull/5303) - Besu: revertReason support in trace
