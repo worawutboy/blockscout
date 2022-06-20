@@ -22,8 +22,8 @@ ENV RUSTFLAGS="-C target-feature=-crt-static"
 EXPOSE 4000
 
 ENV MIX_ENV="prod"
-ENV SOCKET_ROOT="/eth/mainnet"
-ENV NETWORK_PATH="/eth/mainnet"
+ENV SOCKET_ROOT="/"
+ENV NETWORK_PATH="/"
 ENV CHAIN_ID="1"
 ENV COIN_NAME="ETH"
 ENV SUBNETWORK="Ethereum"
