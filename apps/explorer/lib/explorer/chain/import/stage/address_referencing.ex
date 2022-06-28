@@ -4,7 +4,7 @@ defmodule Explorer.Chain.Import.Stage.AddressReferencing do
   `Explorer.Chain.Import.Stage.Addresses`.
   """
 
-  alias Explorer.Chain.Import.{Runner, Stage}
+  alias Explorer.Chain.Import.Stage
 
   @behaviour Stage
 
@@ -12,8 +12,6 @@ defmodule Explorer.Chain.Import.Stage.AddressReferencing do
   def runners,
     do: [
       # Runner.Address.CoinBalances,
-      Runner.StakingPools,
-      Runner.StakingPoolsDelegators
       # Runner.Address.CoinBalancesDaily
     ]
 
