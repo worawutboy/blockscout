@@ -13,16 +13,19 @@ export function batchChannel (func) {
 }
 
 export function showLoader (isTimeout, loader) {
-  if (isTimeout) {
-    const timeout = setTimeout(function () {
-      loader.removeAttr('hidden')
-      loader.show()
-    }, 100)
-    return timeout
-  } else {
-    loader.hide()
-    return null
-  }
+  // if (isTimeout) {
+  //   const timeout = setTimeout(function () {
+  //     loader.removeAttr('hidden')
+  //     loader.show()
+  //   }, 100)
+  //   return timeout
+  // } else {
+  //   loader.hide()
+  //   return null
+  // }
+
+  loader.removeAttr('hidden')
+  loader.show()
 }
 
 export function escapeHtml (text) {

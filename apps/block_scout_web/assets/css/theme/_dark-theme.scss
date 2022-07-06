@@ -5,6 +5,46 @@ $dark-light: #313355; // tile light top share
 $labels-dark: #8a8dba; // header nav, labels
 $dark-stakes-banned-background: #3e314c;
 
+$navbar-color-dark-mode: $dark-light-bg !default;
+$navbar-search-color-dark-mode: $dark-bg !default;
+$navbar-search-slash-icon-color: $primary !default;
+$navbar-link-color-dark-mode: $labels-dark !default;
+$navbar-menu-icons-fill: $labels-dark !default;
+$dropdown-item-color-dark-mode: $dark-light !default;
+$dropdown-item-color-hover-dark-mode: #3f426c !default;
+
+$btn-line-dark-mode: $dark-primary !default;
+$btn-line-border-hover-dark-mode: $dark-primary !default;
+$btn-line-background-color-hover-dark-mode: $dark-primary !default;
+$btn-dropdown-line-background-color-dark-mode: $dark-light !default;
+$btn-dropdown-line-color-dark-mode: $labels-dark !default;
+
+$logo-filter-dark-mode: brightness(0) invert(1) !default;
+$layout-container-color-dark-mode: $body-dark !default;
+$tile-block-number-color-dark-mode: $labels-dark !default;
+$tile-transaction_hash_link-color-dark-mode: $labels-dark !default;
+$tile-address_hash_link-color-dark-mode: $labels-dark !default;
+$tile-body-color-dark-mode: $dark-light !default;
+$tile-bottom-contents-color-dark-mode: $dark-bg !default;
+$tile-type-block-border-left-color: $dark-primary !default;
+$tile-tx-fee-color-dark-mode: $labels-dark !default;
+$tile-data-from-now-color-dark-mode: $labels-dark !default;
+
+$card-color-dark-mode: $dark-light-bg !default;
+$alert-danger-background-color-dark-mode: $dark-light !default;
+$form-control-background-color-dark-mode: $dark-light !default;
+
+$dashboard-stats-left-border-color-dark-mode: $dark-secondary !default;
+$dashboard-banner-chart-legend-label-color-dark-mode: $labels-dark !default;
+$dashboard-banner-network-plain-container-background-color-dark-mode: $dark-light-bg !default;
+$dashboard-line-color-price-dark-mode: $dark-primary !default;
+$dashboard-line-color-market-dark-mode: $dark-secondary !default;
+
+$footer-background-color-dark-mode: $dark-light-bg !default;
+$footer-text-color-dark-mode: $labels-dark !default;
+$footer-link-color-dark-mode: $labels-dark !default;
+$footer-item-disc-color-dark-mode: $dark-secondary !default;
+
 // Switcher
 .dark-mode-changer {
 	display: inline-flex;
@@ -35,23 +75,32 @@ $dark-stakes-banned-background: #3e314c;
 .dark-theme-applied {
 	color: #fff;
 
+	.dark-block-loader {
+		background-color: $card-color-dark-mode;
+	}
+
+	#slash-icon {
+		border-color: $navbar-search-slash-icon-color !important;
+		color: $navbar-search-slash-icon-color !important;
+	}
+
 	// navbar
 	.navbar.navbar-primary {
-		background-color: $dark-light-bg;
+		background-color: $navbar-color-dark-mode !important;
 		.input-group-text {
 			&.border {
-				background-color: $dark-light-bg;
+				background-color: $navbar-color-dark-mode !important;
 			}
 		}
 	}
 	.navbar-brand .navbar-logo {
-		filter: brightness(0) invert(1);
+		filter: $logo-filter-dark-mode !important;
 	}
 	.navbar.navbar-primary .navbar-nav .nav-link {
-		color: $labels-dark;
+		color: $navbar-link-color-dark-mode;
 		.nav-link-icon {
 			svg path {
-				fill: $labels-dark;
+				fill: $navbar-menu-icons-fill;
 			}
 		}
 		&.active, &:hover {
@@ -66,8 +115,8 @@ $dark-stakes-banned-background: #3e314c;
 		}
 	}
 	.navbar.navbar-primary .form-control {
-		background-color: $dark-bg;
-		border-color: $dark-bg;
+		background-color: $navbar-search-color-dark-mode !important;
+		border-color: $navbar-search-color-dark-mode !important;
 		color: #fff;
 		&::placeholder {
 			color: $labels-dark;
@@ -79,76 +128,72 @@ $dark-stakes-banned-background: #3e314c;
 
 	// footer
 	.footer {
-		background: $dark-light-bg;
-		color: $labels-dark;
+		background: $footer-background-color-dark-mode;
+		color: $footer-text-color-dark-mode;
 	}
 	.footer-social-icon,
 	.footer-link {
-		color: $labels-dark;
+		color: $footer-link-color-dark-mode;
 	}
 	.footer-social-icon:hover,
 	.footer-link:hover {
 		color: #fff;
 	}
 	.footer-list ul li::before {
-		background-color: $dark-secondary;
+		background-color: $footer-item-disc-color-dark-mode;
 	}
 
 	// hero stats
 
-	.layout-container .dashboard-banner-container {
-		background-image: none;
-		background-color: $dark-bg !important;
-	}
 	.dashboard-banner-network-plain-container,
 	.dashboard-banner-network-plain-container::after {
-		background-color: $dark-light-bg;
+		background-color: $dashboard-banner-network-plain-container-background-color-dark-mode !important;
 	}
 	.dashboard-banner-network-stats-label,
 	.dashboard-banner-chart-legend .dashboard-banner-chart-legend-label {
-		color: $labels-dark;
+		color: $dashboard-banner-chart-legend-label-color-dark-mode !important;
 	}
 	.dashboard-banner-network-stats-item::before {
-		background-color: $dark-secondary;
+		background-color: $dashboard-stats-left-border-color-dark-mode !important;
 	}
 	.dashboard-banner-chart-legend .dashboard-banner-chart-legend-item {
 		&.price-per-day {
 			&::before {
-			  background-color: $dark-primary;
+			  background-color: $dashboard-line-color-price-dark-mode;
 			}
 		  }
 	  
 		  &.gas-price-oracle {
 			&::before {
-			  background-color: $dark-primary;
+			  background-color: $dashboard-line-color-price-dark-mode;
 			}
 		  }
 	  
 		  &.market-cap-per-day {
 			&::before {
-			  background-color:$dark-secondary;
+			  background-color: $dashboard-line-color-market-dark-mode;
 			}
 		  }
 	  
 		  &.tx-per-day {
 			&::before {
-			  background-color: $dashboard-line-color-transactions;
+			  background-color: $dashboard-line-color-transactions-dark-theme;
 			}
 		  }
 	}
 
 	// main container, layout, cards
 	.layout-container main {
-		background-color: $body-dark;
+		background-color: $layout-container-color-dark-mode !important;
 	}
 
 	.card {
-		background-color: $dark-light-bg;
+		background-color: $card-color-dark-mode !important;
 		box-shadow: 0 0 30px 0 rgba(23, 24, 41, 0.5);
 	}
 
 	.card-header {
-		border-bottom-color: darken($labels-dark, 30);
+		border-bottom-color: darken($navbar-menu-icons-fill, 30);
 	}
 
 	.address-detail-hash-title {
@@ -156,7 +201,7 @@ $dark-stakes-banned-background: #3e314c;
 	}
 
 	.card-tabs {
-		border-bottom-color: darken($labels-dark, 30);
+		border-bottom-color: darken($navbar-menu-icons-fill, 30);
 	}
 
 	.card-tab {
@@ -181,10 +226,10 @@ $dark-stakes-banned-background: #3e314c;
 	}
 
 	.tile, .tile-code {
-		border-top-color: $dark-light;
-		border-bottom-color: $dark-light;
-		border-right-color: $dark-light;
-		background-color: $dark-light;
+		border-top-color: $tile-body-color-dark-mode !important;
+		border-bottom-color: $tile-body-color-dark-mode !important;
+		border-right-color: $tile-body-color-dark-mode !important;
+		background-color: $tile-body-color-dark-mode !important;
 		color: $labels-dark;
 		&:not([class^="tile tile-type"]) {
 			border-left-color: $dark-light;
@@ -200,7 +245,7 @@ $dark-stakes-banned-background: #3e314c;
 		}
 	}
 	.tile-bottom-contents {
-		background-color: $dark-bg;
+		background-color: $tile-bottom-contents-color-dark-mode;
 	}
 	a.tile-title {
 		color: #fff !important;
@@ -228,7 +273,27 @@ $dark-stakes-banned-background: #3e314c;
 		background-color: $dark-primary;
 	}
 	.tile.tile-type-block {
-		border-left-color: $dark-primary
+		border-left-color: $tile-type-block-border-left-color;
+		& a[data-selector=block-number] {
+			color: $tile-block-number-color-dark-mode !important;
+		}
+		&[data-selector="block-tile"] {
+			border-left-color: $dark-primary !important;
+		}
+	}
+	.tile.tile-type-transaction {
+		& a[data-test=transaction_hash_link] {
+			color: $tile-transaction_hash_link-color-dark-mode !important;
+		}
+		& a[data-test=address_hash_link] span {
+			color: $tile-address_hash_link-color-dark-mode !important;
+		}
+		& span[data-test=tx-fee] {
+			color: $tile-tx-fee-color-dark-mode !important;
+		}
+		& span[data-test=data-from-now] {
+			color: $tile-data-from-now-color-dark-mode !important;
+		}
 	}
 	.tile.tile-type-block .tile-status-label {
 		color: $dark-primary;
@@ -252,11 +317,11 @@ $dark-stakes-banned-background: #3e314c;
 
 	.btn-line {
 		background-color: transparent;
-		border-color: $dark-primary;
-		color: $dark-primary;
+		border-color: $btn-line-dark-mode;
+		color: $btn-line-dark-mode;
 		&:hover {
-			border-color: $dark-primary;
-			background-color: $dark-primary;
+			border-color: $btn-line-border-hover-dark-mode;
+			background-color: $btn-line-background-color-hover-dark-mode;
 			color: #fff;
 		}
 	}
@@ -276,9 +341,9 @@ $dark-stakes-banned-background: #3e314c;
 
 	// pagination
 	.pagination-container .pagination .page-link {
-		color: $labels-dark;
-		border-color: $dark-light;
-		background-color: $dark-light;
+		color: $navbar-menu-icons-fill;
+		border-color: $dropdown-item-color-dark-mode;
+		background-color: $dropdown-item-color-dark-mode;
 		&:not(.no-hover):hover {
 			color: #fff;
 			background-color: $dark-primary;
@@ -287,18 +352,18 @@ $dark-stakes-banned-background: #3e314c;
 			}
 		}
 		&[disabled] {
-			color: $labels-dark;
-			border-color: $dark-light;
-			background-color: $dark-light;
+			color: $navbar-menu-icons-fill;
+			border-color: $dropdown-item-color-dark-mode;
+			background-color: $dropdown-item-color-dark-mode;
 		}
 	}
 
 	// dropdown
 	.dropdown-menu {
-		background-color: $dark-light;
-		border-left-color: $dark-light;
-		border-right-color: $dark-light;
-		border-bottom-color: $dark-light;
+		background-color: $dropdown-item-color-dark-mode;
+		border-left-color: $dropdown-item-color-dark-mode;
+		border-right-color: $dropdown-item-color-dark-mode;
+		border-bottom-color: $dropdown-item-color-dark-mode;
 	}
 
 	.dropdown-item {
@@ -311,18 +376,18 @@ $dark-stakes-banned-background: #3e314c;
 		background-color: $dark-primary;
 	}
 	.dropdown-item.active.header,	.dropdown-item.header:hover,	.dropdown-item.header:focus {
-		background-color: $dark-light !important;
+		background-color: $dropdown-item-color-dark-mode !important;
 	}
 	.btn-dropdown-line {
-		background-color: $dark-light;
-		border-color: $dark-light;
-		color: $labels-dark;
+		background-color: $btn-dropdown-line-background-color-dark-mode;
+		border-color: $btn-dropdown-line-background-color-dark-mode;
+		color: $btn-dropdown-line-color-dark-mode;
 	}
 
 	// table
 	.stakes-table-head, .stakes-table-th {
-		background-color: $dark-light;
-		color: $labels-dark;
+		background-color: $tile-body-color-dark-mode;
+		color: $tile-block-number-color-dark-mode;
 	}
 
 	.stakes-table-body {
@@ -334,7 +399,7 @@ $dark-stakes-banned-background: #3e314c;
 	}
 
 	.stakes-td {
-		border-bottom-color: darken($labels-dark, 30);
+		border-bottom-color: darken($tile-block-number-color-dark-mode, 30);
 	}
 
 	.stakes-tr-banned {
@@ -357,10 +422,10 @@ $dark-stakes-banned-background: #3e314c;
 	}
 
 	.table th, .table td {
-		border-top-color: darken($labels-dark, 30);
+		border-top-color: darken($navbar-menu-icons-fill, 30);
 	}
 	hr {
-		border-top-color: darken($labels-dark, 30);
+		border-top-color: darken($navbar-menu-icons-fill, 30);
 	}
 
 	.i-tooltip {
@@ -385,7 +450,7 @@ $dark-stakes-banned-background: #3e314c;
 
 	// api's
 	.api-anchors-list {
-		background-color: $dark-light;
+		background-color: $dropdown-item-color-dark-mode;
 	}
 	.api-doc-list-item {
 		border-bottom-color: darken($labels-dark, 30);
@@ -607,20 +672,20 @@ $dark-stakes-banned-background: #3e314c;
 
 	// Form Controlls
 	.form-control {
-		background-color: $dark-light;
-		border-color: $dark-light;
+		background-color: $form-control-background-color-dark-mode;
+		border-color: $form-control-background-color-dark-mode;
 		color: #fff;
 		transition: border-color 0.15s ease-in-out;
 
 		&[readonly] {
-			background-color: $dark-light !important;
+			background-color: $form-control-background-color-dark-mode !important;
 		}
 
 		&::placeholder {
 			color: $labels-dark;
 		}
 		&:focus {
-			background-color: $dark-light;
+			background-color: $form-control-background-color-dark-mode;
 			border-color: $dark-primary;
 			color: #fff;
 		}
@@ -630,7 +695,7 @@ $dark-stakes-banned-background: #3e314c;
 		&:-webkit-autofill:focus {
 			caret-color: #fff;
 			-webkit-text-fill-color: #fff;
-			-webkit-box-shadow: 0 0 0px 1000px $dark-light inset;
+			-webkit-box-shadow: 0 0 0px 1000px $form-control-background-color-dark-mode inset;
 		}
 	}
 
@@ -667,9 +732,9 @@ $dark-stakes-banned-background: #3e314c;
 
 	// Content loading placeholders
 	.tile-loader, .table-content-loader {
-		background-color: $dark-bg !important;
+		background-color: $tile-bottom-contents-color-dark-mode !important;
 		&:before {
-			background: linear-gradient(to right, $dark-bg 2%, lighten($dark-bg, 3) 18%, $dark-bg 33%);
+			background: linear-gradient(to right, $tile-bottom-contents-color-dark-mode 2%, lighten($tile-bottom-contents-color-dark-mode, 3) 18%, $tile-bottom-contents-color-dark-mode 33%);
 		}
 	}
 
@@ -993,8 +1058,8 @@ $dark-stakes-banned-background: #3e314c;
 	}
 
 	.alert-danger {
-		background-color: $dark-light;
-		border-color: $dark-light;
+		background-color: $alert-danger-background-color-dark-mode;
+		border-color: $alert-danger-background-color-dark-mode;
 		.alert-link {
 			color: $alert-danger-color;
 		}
@@ -1102,7 +1167,7 @@ $dark-stakes-banned-background: #3e314c;
 		  }
 	}
 	.main-search-autocomplete {
-		background-color: $dark-bg !important;
+		background-color: $navbar-search-color-dark-mode !important;
 		color: #fff !important;
 	}
 	.autocomplete-category {
@@ -1130,14 +1195,14 @@ $dark-stakes-banned-background: #3e314c;
 }
 
 .dark-theme-applied .dropdown-item {
-	background-color: $dark-light !important;
+	background-color: $dropdown-item-color-dark-mode !important;
 	color: #fff !important;
 }
 
 .dark-theme-applied .dropdown-item.active:not(.header), .dark-theme-applied .dropdown-item:not(.header):hover, .dark-theme-applied .dropdown-item:not(.header):focus {
     background-image: none;
     width: 100%;
-    background-color: #3f426c !important;
+    background-color: $dropdown-item-color-hover-dark-mode !important;
 }
 
 @media (max-width: 991.98px) {
@@ -1173,7 +1238,7 @@ $dark-stakes-banned-background: #3e314c;
 	}
 }
 .dark-theme-applied .confirmations-label:after {
-    border-left: .9rem solid $dark-light-bg;
+    border-left: .9rem solid $card-color-dark-mode;
 }
 
 .dark-theme-applied .i-tooltip-2:hover{
