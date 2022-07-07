@@ -177,7 +177,7 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 	  
 		  &.tx-per-day {
 			&::before {
-			  background-color: $dashboard-line-color-transactions-dark-theme;
+			  background: $dashboard-line-color-transactions-dark-theme;
 			}
 		  }
 	}

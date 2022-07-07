@@ -153,7 +153,7 @@ $dashboard-banner-network-stats-label: $tertiary default;
 
     &.tx-per-day {
       &::before {
-        background-color: $dashboard-line-color-transactions;
+        background: $dashboard-line-color-transactions;
       }
     }
   }

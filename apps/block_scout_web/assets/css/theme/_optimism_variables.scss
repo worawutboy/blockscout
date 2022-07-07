@@ -73,7 +73,7 @@ $dashboard-stats-item-border-color: $secondary; // stat border
 $dashboard-banner-gradient-start: #000; // gradient begin
 $dashboard-banner-gradient-end: #1B1E23; // gradient end
 $dashboard-banner-network-plain-container-background-color: $sextuple; // stats bg
-$dashboard-line-color-transactions: $primary;
+$dashboard-line-color-transactions: linear-gradient(0.52deg, #E93434 -35.19%, #861BF5 139.35%);
 
 // dashboard in the dark mode
 $dashboard-line-color-price-dark-mode: #93d7ff; // price left border
@@ -85,7 +85,7 @@ $dashboard-stats-left-border-color-dark-mode: $primary;
 $dashboard-banner-network-stats-label-dark-mode: $quaternary;
 $dashboard-stats-item-border-color-dark-mode: $secondary; // stat border
 $dashboard-banner-network-plain-container-background-color-dark-mode: $sextuple; // stats bg
-$dashboard-line-color-transactions-dark-theme: $primary;
+$dashboard-line-color-transactions-dark-theme: linear-gradient(0.52deg, #E93434 -35.19%, #861BF5 139.35%);;
 
 // form
 $form-control-border-color-active: $secondary;
