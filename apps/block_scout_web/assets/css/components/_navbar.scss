@@ -23,6 +23,15 @@ $navbar-logo-width: 100% !default;
   }
 
   .navbar-nav {
+
+    .nav-item .dropdown-menu .dropdown-item {
+      &:active,
+      &:focus,
+      &:hover {
+        background-color: $primary;
+        color: #fff;
+      }
+    }
     
     .nav-link {
       outline: none;

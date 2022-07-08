@@ -17,6 +17,7 @@ $tile-status-awaiting-internal-transactions: $warning !default;
 $tile-padding: 1rem;
 $tile-title-color: #333 !default;
 $tile-body-a-color: #5959d8 !default;
+$tile-block-number-color: $primary !default;
 
 @mixin generate-tile-block($prefix, $color, $label-color: false) {
   &#{ $prefix } {
@@ -292,6 +293,10 @@ $tile-body-a-color: #5959d8 !default;
       line-height: 1.2;
       margin-bottom: 12px;
       padding: 1rem 1rem 0 1rem;
+    }
+
+    & a[data-selector=block-number] {
+      color: $tile-block-number-color !important;
     }
   }
 

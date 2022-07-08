@@ -4,12 +4,14 @@ $dark-light-bg: #282945; // pills bg shade
 $dark-light: #313355; // tile light top share
 $labels-dark: #8a8dba; // header nav, labels
 $dark-stakes-banned-background: #3e314c;
+$dark-primary-nav: $dark-primary !default;
 
 $navbar-color-dark-mode: $dark-light-bg !default;
 $navbar-search-color-dark-mode: $dark-bg !default;
 $navbar-search-slash-icon-color: $primary !default;
 $navbar-link-color-dark-mode: $labels-dark !default;
 $navbar-menu-icons-fill: $labels-dark !default;
+$navbar-toggler-icon-dark-mode: invert(1) !default;
 $dropdown-item-color-dark-mode: $dark-light !default;
 $dropdown-item-color-hover-dark-mode: #3f426c !default;
 
@@ -29,10 +31,20 @@ $tile-bottom-contents-color-dark-mode: $dark-bg !default;
 $tile-type-block-border-left-color: $dark-primary !default;
 $tile-tx-fee-color-dark-mode: $labels-dark !default;
 $tile-data-from-now-color-dark-mode: $labels-dark !default;
+$tile-transaction-type-block-border-color: $dark-primary !default;
 
 $card-color-dark-mode: $dark-light-bg !default;
+$card-title-color-dark-mode: #fff !default;
+$card-tab-text-color-dark-mode: #fff !default;
 $alert-danger-background-color-dark-mode: $dark-light !default;
 $form-control-background-color-dark-mode: $dark-light !default;
+$stakes-td-border-bottom-color-dark-mode: darken($labels-dark, 30) !default;
+$stakes-table-head-color-dark-mode: $labels-dark !default;
+$text-muted-dark-mode: #6c757d !default;
+$data-empty-response-message-dark-mode: #fff !default;
+$tooltip-background-color-dark-mode: $dark-primary !default;
+$tooltip-inversed-background-color-dark-mode: $btn-line-color !default;
+$testnet-label-svg-dark-mode: no-repeat url(../static/images/testnet_label_dark.svg) !default;
 
 $dashboard-stats-left-border-color-dark-mode: $dark-secondary !default;
 $dashboard-banner-chart-legend-label-color-dark-mode: $labels-dark !default;
@@ -84,6 +96,19 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 		color: $navbar-search-slash-icon-color !important;
 	}
 
+	.text-muted {
+		color: $text-muted-dark-mode !important;
+	}
+
+	div[data-empty-response-message] {
+		color: $data-empty-response-message-dark-mode;
+	}
+
+	.testnet-label {
+		background: $testnet-label-svg-dark-mode;
+		background-size: 50px;
+	}
+
 	// navbar
 	.navbar.navbar-primary {
 		background-color: $navbar-color-dark-mode !important;
@@ -97,7 +122,7 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 		filter: $logo-filter-dark-mode !important;
 	}
 	.navbar.navbar-primary .navbar-nav .nav-link {
-		color: $navbar-link-color-dark-mode;
+		color: $navbar-link-color-dark-mode !important;
 		.nav-link-icon {
 			svg path {
 				fill: $navbar-menu-icons-fill;
@@ -106,11 +131,11 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 		&.active, &:hover {
 			.nav-link-icon {
 				svg path {
-					fill: $dark-primary;
+					fill: $dark-primary-nav;
 				}
 			}
 			&:before {
-				background-color: $dark-primary;
+				background-color: $dark-primary-nav;
 			}
 		}
 	}
@@ -123,7 +148,7 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 		}
 	}
 	.navbar.navbar-primary .navbar-toggler .navbar-toggler-icon {
-		filter: invert(1);
+		filter: $navbar-toggler-icon-dark-mode;
 	}
 
 	// footer
@@ -200,12 +225,17 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 		color: #fff;
 	}
 
+	.card-title {
+		color: $card-title-color-dark-mode;
+	}
+
 	.card-tabs {
 		border-bottom-color: darken($navbar-menu-icons-fill, 30);
 	}
 
 	.card-tab {
 		background-color: transparent;
+		color: $card-tab-text-color-dark-mode;
 		&:hover:not(.active) {
 			background-color: rgba($dark-primary, .15);
 			color: $dark-primary;
@@ -232,10 +262,10 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 		background-color: $tile-body-color-dark-mode !important;
 		color: $labels-dark;
 		&:not([class^="tile tile-type"]) {
-			border-left-color: $dark-light;
+			border-left-color: $tile-body-color-dark-mode;
 		}
 		&.tile-type-coin-balance {
-			border-left-color: $dark-light;
+			border-left-color: $tile-body-color-dark-mode;
 		}
 		.tile-title {
 			color: #fff;
@@ -299,9 +329,7 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 		color: $dark-primary;
 	}
 	.tile.tile-type-block .tile-transaction-type-block {
-		border-right-color: $dark-primary;
-		border-top-color: $dark-primary;
-		border-bottom-color: $dark-primary;
+		border-color: $tile-transaction-type-block-border-color !important;
 	}
 	.tile .progress {
 		background-color: rgba(#fff, .2);
@@ -322,7 +350,7 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 		&:hover {
 			border-color: $btn-line-border-hover-dark-mode;
 			background-color: $btn-line-background-color-hover-dark-mode;
-			color: #fff;
+			color: #fff !important;
 		}
 	}
 
@@ -387,7 +415,7 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 	// table
 	.stakes-table-head, .stakes-table-th {
 		background-color: $tile-body-color-dark-mode;
-		color: $tile-block-number-color-dark-mode;
+		color: $stakes-table-head-color-dark-mode;
 	}
 
 	.stakes-table-body {
@@ -399,7 +427,7 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 	}
 
 	.stakes-td {
-		border-bottom-color: darken($tile-block-number-color-dark-mode, 30);
+		border-bottom-color: $stakes-td-border-bottom-color-dark-mode;
 	}
 
 	.stakes-tr-banned {
@@ -478,10 +506,10 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 
 	//tooltips
 	.tooltip .arrow:before {
-		border-top-color: $dark-primary;
-    	border-bottom-color: $dark-primary;
+		border-top-color: $tooltip-background-color-dark-mode;
+    	border-bottom-color: $tooltip-background-color-dark-mode;
 	}
-	.tooltip > .tooltip-inner {background-color: $dark-primary;}
+	.tooltip > .tooltip-inner {background-color: $tooltip-background-color-dark-mode;}
 
 	.tooltip-pale-color.bs-tooltip-top .arrow::before,
 	.tooltip-pale-color.bs-tooltip-auto[x-placement^="top"] .arrow::before {
@@ -1124,30 +1152,30 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 
 	.tooltip-inversed-color {
 		.tooltip-inner {
-			background-color: $btn-line-color !important;
+			background-color: $tooltip-inversed-background-color-dark-mode !important;
 			color: #fff !important;
 		}
 	}
 
 	.tooltip-inversed-color.bs-tooltip-top .arrow::before,
 	.tooltip-inversed-color.bs-tooltip-auto[x-placement^="top"] .arrow::before {
-		border-top-color: $btn-line-color !important;
+		border-top-color: $tooltip-inversed-background-color-dark-mode !important;
 	}
 		
 	.tooltip-inversed-color.bs-tooltip-right .arrow::before,
 	.tooltip-inversed-color.bs-tooltip-auto[x-placement^="right"] .arrow::before {
-		border-right-color: $btn-line-color !important;
+		border-right-color: $tooltip-inversed-background-color-dark-mode !important;
 	}
 		
 	.tooltip-inversed-color.bs-tooltip-bottom .arrow::before,
 	.tooltip-inversed-color.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
-		border-bottom-color: $btn-line-color !important;
+		border-bottom-color: $tooltip-inversed-background-color-dark-mode !important;
 	}
 		
 		
 	.tooltip-inversed-color.bs-tooltip-left .arrow::before,
 	.tooltip-inversed-color.bs-tooltip-auto[x-placement^="left"] .arrow::before {
-		border-left-color: $btn-line-color !important;
+		border-left-color: $tooltip-inversed-background-color-dark-mode !important;
 	}
 
 	.stakes-top {
@@ -1174,10 +1202,10 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 		color: #fff !important;
 	}
 	ul[id^='autoComplete_list_'] {
-		background-color: $dark-light-bg !important;
+		background-color: $navbar-color-dark-mode !important;
 	}
 	li[id^='autoComplete_result_'] {
-		background-color: $dark-light-bg !important;
+		background-color: $navbar-color-dark-mode !important;
 		color: #fff !important;
 
 		&:hover {
@@ -1205,13 +1233,24 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
     background-color: $dropdown-item-color-hover-dark-mode !important;
 }
 
+.dark-theme-applied .navbar.navbar-primary .navbar-nav {
+	.nav-item .dropdown-menu .dropdown-item {
+		&:active,
+		&:focus,
+		&:hover {
+		  background-color: $dark-primary-nav !important;
+		  color: #fff;
+		}
+	}
+}
+
 @media (max-width: 991.98px) {
 	.dark-theme-applied .navbar.navbar-primary .navbar-nav .nav-link:hover,
 	.dark-theme-applied .navbar.navbar-primary .navbar-nav .nav-link.activeLink,
 	.dark-theme-applied .navbar.navbar-primary .navbar-nav .nav-link:focus {
 		background-image: none;
 		width: 100%;
-		background-color: #35335d !important;
+		background: none;
 		color: white;
 		border: none;
 	}
@@ -1246,6 +1285,6 @@ $footer-item-disc-color-dark-mode: $dark-secondary !default;
 }
 
 .dark-theme-applied .btn-no-border-link-to-tems {
-	border-color: $dark-primary;
-	color: $dark-primary;
+	border-color: $dark-primary !important;
+	color: $dark-primary !important;
 }
